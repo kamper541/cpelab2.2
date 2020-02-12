@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
@@ -129,90 +129,65 @@
               
             </h1>
           </section>
-      
-          <!-- Main content -->
-          <section class="content">
+      <!-- contact ui -->
+          <div class="container-fluid">
             <div class="row">
-                <div class="box box-primary direct-chat direct-chat-primary">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">Direct Chat</h3>
-        
-                      <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                      <!-- Conversations are loaded here -->
-                      <div class="direct-chat-messages">
-                        <!-- Message. Default to the left -->
-                        <div class="direct-chat-msg">
-                          <div class="direct-chat-info clearfix">
-                            <span class="direct-chat-name pull-left">Goravit Buakampun</span>
-                            
-                          </div>
-                          <!-- /.direct-chat-info -->
-                          <img class="direct-chat-img" src="./myfile/thumb-126470.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
-                          <div class="direct-chat-text">
-                            Leave the message here with your name. I will answer as soon as possible if not please contact (+66) 98 - 782 - 8328 
-                          </div>
-                          <!-- /.direct-chat-text -->
+                <div class="col-md-6">
+                    <div class="card border-info mb-3">
+                        <div class="card-header">
+                            <h3 class="card-title">Contact Info.</h3>
                         </div>
-                        <!-- /.direct-chat-msg -->
-        
-                        <!-- Message to the right -->
-                        <div class="direct-chat-msg right">
-                          <div class="direct-chat-info clearfix">
-                          </div>
-                          
+                        <div class="card-body">
+                            <form action="" id="myform">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="Fullname-Surname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Gender</label>
+                                    <select id="gender" class="form-control" id="">
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" id="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Text</label>
+                                    <input type="text" id="textt" class="form-control" placeholder="write smt.">
+                                </div>
+                            </form>
+                            <button id="sub" class="btn btn-primary btn-flat">Submit</button>
+                            <input type="button" onclick="myFunction()" value="Reset form">
                         </div>
-                        <!-- /.direct-chat-msg -->
-                      </div>
-                      <!--/.direct-chat-messages-->
-        
-                      <!-- Contacts are loaded here -->
-                      <div class="direct-chat-contacts">
-                        <ul class="contacts-list">
-                          <li>
-                            <a href="#">
-                              <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg" alt="User Image">
-        
-                              <div class="contacts-list-info">
-                                    <span class="contacts-list-name">
-                                      Count Dracula
-                                      <small class="contacts-list-date pull-right">2/28/2015</small>
-                                    </span>
-                                <span class="contacts-list-msg">How have you been? I was...</span>
-                              </div>
-                              <!-- /.contacts-list-info -->
-                            </a>
-                          </li>
-                          <!-- End Contact Item -->
-                        </ul>
-                        <!-- /.contatcts-list -->
-                      </div>
-                      <!-- /.direct-chat-pane -->
                     </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer">
-                      <form action="#" method="post">
-                        <div class="input-group">
-                          <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                              <span class="input-group-btn">
-                                <button type="submit" class="btn btn-primary btn-flat">Send</button>
-                              </span>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-header">
+                            <h3 class="card-title">Result</h3>
                         </div>
-                      </form>
+                        <div class="card-body">
+                            <table class="table text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                     </div>
-                    <!-- /.box-footer-->
-                  </div>
-                        
-    </div>
-              
-      
-          </section>
-          <!-- /.content -->
+                </div>
+            </div>
+        </div>
         </div>
         <!-- /.content-wrapper -->
       
@@ -436,13 +411,31 @@
     integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs=" 
     crossorigin="anonymous"></script>
 
-    <script src="./dist copy/js/adminlte.min.js"></script>
-    <script src="./dist copy/js/demo.js"></script>
-    <script src="calculation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <script src="dist copy/js/adminlte.min.js"></script>
+    <script src="dist copy/js/demo.js"></script>
+    <script src="firebaseCon.js"></script>
     <script>
         $(document).ready(function () {
           $('.sidebar-menu').tree()
         })
       </script>
+      <script>
+        function myFunction() {
+          document.getElementById("myform").reset();
+        }
+        </script>
 </body>
 </html>
